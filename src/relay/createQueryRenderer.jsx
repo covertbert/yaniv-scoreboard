@@ -1,5 +1,6 @@
 import React from 'react'
 import { QueryRenderer } from 'react-relay'
+import Preloader from '../components/Preloader'
 
 const createQueryRenderer = (environment, query, mapPropsToVariables) => (ComposedComponent) => {
   const displayName = ComposedComponent.displayName || ComposedComponent.name || 'Component'
@@ -19,7 +20,7 @@ const createQueryRenderer = (environment, query, mapPropsToVariables) => (Compos
         }
 
         if (!renderProps) {
-          return <h2>Loading</h2>
+          return <Preloader />
         }
 
         return (

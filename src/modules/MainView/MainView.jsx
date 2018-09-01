@@ -1,7 +1,8 @@
 import React from 'react'
+import { Heading } from 'gestalt'
 
 const MainView = () => (
-  <h1>Hello</h1>
+  <Heading>balls</Heading>
 )
 
 export default MainView

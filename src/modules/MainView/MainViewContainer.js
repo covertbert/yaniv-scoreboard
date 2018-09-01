@@ -10,8 +10,8 @@ const withQueryRenderer = createQueryRenderer(
   environment,
   graphql`
    query MainViewContainer_Query {
-      users {
-        name
+      games {
+        id
       }
     }
   `,
