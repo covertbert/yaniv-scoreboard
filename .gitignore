@@ -21,3 +21,9 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
+
+# relay
+__generated__/
+
+# tests
+__tests__/
