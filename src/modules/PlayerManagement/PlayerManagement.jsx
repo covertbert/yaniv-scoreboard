@@ -12,12 +12,30 @@ const PlayerManagement = ({
 
     <Heading>Players</Heading>
 
-    <Box marginTop={8} column={12}>
+    <Box
+      marginTop={8}
+      column={12}
+    >
       {players.map((player) => (
-        <Box marginBottom={5} paddingY={5} paddingX={5} column={12} color="lightGray">
+        <Box
+          key={player.id}
+          marginBottom={5}
+          paddingY={5}
+          paddingX={5}
+          column={12}
+          color="lightGray"
+        >
           <Card paddingY={10}>
-            <Text align="center" bold size="xl">
-              <Box marginBottom={3} paddingX={1} paddingY={1}>
+            <Text
+              align="center"
+              bold
+              size="xl"
+            >
+              <Box
+                marginBottom={3}
+                paddingX={1}
+                paddingY={1}
+              >
                 {player.name}
               </Box>
             </Text>

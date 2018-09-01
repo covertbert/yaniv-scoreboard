@@ -23,6 +23,9 @@
     "jsx-a11y/anchor-is-valid": [ "error", {
       "components": [ "Link" ],
       "specialLink": [ "to" ]
+    }],
+    "react/jsx-max-props-per-line":  [ "error", {
+      "maximum": 1
     }]
   },
   "settings": {
