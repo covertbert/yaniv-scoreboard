@@ -1,12 +1,10 @@
 import React from 'react'
 import { Box, Button } from 'gestalt'
 import CenterWrapper from '../../components/CenterWrapper'
-import PlayerManagementButton from '../../components/PlayerManagementButton'
 // import { Link } from 'react-router-dom'
 
 const MainMenu = () => (
   <CenterWrapper>
-    <PlayerManagementButton />
     <Box width="100%">
       <Box padding={2}>
         <Button accessibilityLabel="New Game" text="New game" color="blue" />
