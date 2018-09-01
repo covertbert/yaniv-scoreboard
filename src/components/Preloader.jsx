@@ -4,7 +4,7 @@ import CenterWrapper from './CenterWrapper'
 
 const Preloader = () => (
   <CenterWrapper>
-    <Spinner show accessibilityLabel="Example spinner" />
+    <Spinner show accessibilityLabel="Loading spinner" />
   </CenterWrapper>
 )
 

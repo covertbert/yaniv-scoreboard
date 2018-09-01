@@ -1,8 +1,12 @@
 import React from 'react'
-import { Heading } from 'gestalt'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+import Routes from '../../Routes'
 
 const MainView = () => (
-  <Heading>balls</Heading>
+  <Router>
+    <Routes />
+  </Router>
 )
 
 export default MainView

@@ -42,6 +42,7 @@
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.3.2",
     "react-relay": "^1.6.0",
+    "react-router-dom": "^4.3.1",
     "recompose": "^0.27.1",
     "relay-compiler": "^1.6.0",
     "resolve": "1.6.0",
