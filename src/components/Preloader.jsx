@@ -1,18 +1,11 @@
 import React from 'react'
 import { Spinner } from 'gestalt'
-import styled from 'styled-components'
-
-const PreloaderWrapper = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
+import CenterWrapper from './CenterWrapper'
 
 const Preloader = () => (
-  <PreloaderWrapper>
+  <CenterWrapper>
     <Spinner show accessibilityLabel="Example spinner" />
-  </PreloaderWrapper>
+  </CenterWrapper>
 )
 
 export default Preloader
