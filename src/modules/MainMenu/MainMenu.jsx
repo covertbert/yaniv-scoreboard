@@ -7,10 +7,17 @@ const MainMenu = () => (
   <CenterWrapper>
     <Box width="100%">
       <Box padding={2}>
-        <Button accessibilityLabel="New Game" text="New game" color="blue" />
+        <Button
+          accessibilityLabel="New Game"
+          text="New game"
+          color="blue"
+        />
       </Box>
       <Box padding={2}>
-        <Button accessibilityLabel="Load Game" text="Load game" />
+        <Button
+          accessibilityLabel="Load Game"
+          text="Load game"
+        />
       </Box>
     </Box>
   </CenterWrapper>

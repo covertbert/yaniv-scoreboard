@@ -5,7 +5,7 @@ import { Card, Text, Box, Button, Heading } from 'gestalt'
 import GenericLayout from '../../components/GenericLayout'
 
 const PlayerManagement = ({
-  players,
+  data,
   deletePlayer,
 }) => (
   <GenericLayout>
@@ -16,7 +16,7 @@ const PlayerManagement = ({
       marginTop={8}
       column={12}
     >
-      {players.map((player) => (
+      {data.players.map((player) => (
         <Box
           key={player.id}
           marginBottom={5}
@@ -53,7 +53,7 @@ const PlayerManagement = ({
 )
 
 PlayerManagement.propTypes = {
-  players: PropTypes.array.isRequired,
+  data: PropTypes.array.isRequired,
   deletePlayer: PropTypes.func.isRequired,
 }
 

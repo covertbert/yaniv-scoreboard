@@ -4,7 +4,10 @@ import CenterWrapper from './CenterWrapper'
 
 const Preloader = () => (
   <CenterWrapper>
-    <Spinner show accessibilityLabel="Loading spinner" />
+    <Spinner
+      show
+      accessibilityLabel="Loading spinner"
+    />
   </CenterWrapper>
 )
 

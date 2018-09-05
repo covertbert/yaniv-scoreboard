@@ -1,8 +1,8 @@
-import { compose, setDisplayName, withHandlers } from 'recompose'
-import { graphql } from 'react-relay'
+import { graphql, compose } from 'react-apollo'
+import { setDisplayName, withHandlers } from 'recompose'
+import { gql } from 'apollo-boost'
 
-import environment from '../../environment'
-import { createQueryRenderer } from '../../relay'
+import ComponentLoader from '../../apollo/ComponentLoader'
 
 import PlayerManagement from './PlayerManagement'
 
@@ -12,22 +12,19 @@ const createHandlers = {
   },
 }
 
-const withQueryRenderer = createQueryRenderer(
-  environment,
-  graphql`
-   query PlayerManagementContainer_Query {
-      players {
-        id
-        name
-        createdAt
-      }
+const colorsQuery = gql`
+  {
+    players {
+      id
+      name
+      createdAt
     }
-  `,
-)
-
+  }
+`
 
 export default compose(
   setDisplayName('PlayerManagementContainer'),
-  withQueryRenderer,
+  graphql(colorsQuery),
+  ComponentLoader((props) => props.data.loading),
   withHandlers(createHandlers),
 )(PlayerManagement)
