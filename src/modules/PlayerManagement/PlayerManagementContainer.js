@@ -1,5 +1,5 @@
 import { graphql, compose } from 'react-apollo'
-import { setDisplayName, withHandlers } from 'recompose'
+import { setDisplayName, withHandlers, withProps } from 'recompose'
 import { gql } from 'apollo-boost'
 
 import ComponentLoader from '../../apollo/ComponentLoader'
@@ -12,7 +12,11 @@ const createHandlers = {
   },
 }
 
-const colorsQuery = gql`
+const createProps = ({ data }) => ({
+  players: data.players,
+})
+
+const query = gql`
   {
     players {
       id
@@ -24,7 +28,8 @@ const colorsQuery = gql`
 
 export default compose(
   setDisplayName('PlayerManagementContainer'),
-  graphql(colorsQuery),
+  graphql(query),
   ComponentLoader((props) => props.data.loading),
   withHandlers(createHandlers),
+  withProps(createProps),
 )(PlayerManagement)
