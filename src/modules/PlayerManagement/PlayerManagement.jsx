@@ -6,7 +6,7 @@ import GenericLayout from '../../components/GenericLayout'
 
 const PlayerManagement = ({
   players,
-  deletePlayer,
+  deletePlayerMutation,
 }) => (
   <GenericLayout>
 
@@ -43,7 +43,7 @@ const PlayerManagement = ({
               accessibilityLabel="Delete player"
               color="red"
               text="Delete"
-              onClick={() => { deletePlayer(player.id) }}
+              onClick={() => { deletePlayerMutation(player.id) }}
             />
           </Card>
         </Box>
@@ -54,7 +54,7 @@ const PlayerManagement = ({
 
 PlayerManagement.propTypes = {
   players: PropTypes.array,
-  deletePlayer: PropTypes.func.isRequired,
+  deletePlayerMutation: PropTypes.func.isRequired,
 }
 
 PlayerManagement.defaultProps = {
