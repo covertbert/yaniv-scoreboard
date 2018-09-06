@@ -1,12 +1,8 @@
-import { compose, setDisplayName, withHandlers, withProps } from 'recompose'
+import { compose, setDisplayName, withHandlers } from 'recompose'
 import { gql } from 'apollo-boost'
+
 import WithQueryRenderer from '../../apollo/QueryRenderer'
-
 import PlayerManagement from './PlayerManagement'
-
-const createProps = ({ data }) => ({
-  players: data.players,
-})
 
 const createHandlers = {
   deletePlayer: () => () => {
@@ -27,5 +23,4 @@ export default compose(
   setDisplayName('PlayerManagementContainer'),
   WithQueryRenderer(query),
   withHandlers(createHandlers),
-  withProps(createProps),
 )(PlayerManagement)
