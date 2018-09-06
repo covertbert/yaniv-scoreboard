@@ -53,8 +53,12 @@ const PlayerManagement = ({
 )
 
 PlayerManagement.propTypes = {
-  players: PropTypes.array.isRequired,
+  players: PropTypes.array,
   deletePlayer: PropTypes.func.isRequired,
+}
+
+PlayerManagement.defaultProps = {
+  players: [],
 }
 
 export default PlayerManagement
