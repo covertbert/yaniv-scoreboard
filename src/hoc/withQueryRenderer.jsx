@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react'
-import { setDisplayName, withProps } from 'recompose'
+import { setDisplayName, withProps, branch, renderComponent } from 'recompose'
 import { graphql, compose } from 'react-apollo'
-import ComponentLoader from './ComponentLoader'
 
-const WithQueryRenderer = (query) => (ComposedComponent) => {
+import Preloader from '../components/Preloader'
+
+const ComponentLoader = (loading) => branch(loading, renderComponent(Preloader))
+
+const withQueryRenderer = (query) => (ComposedComponent) => {
   const wrappedComponentName = ComposedComponent.displayName || ComposedComponent.name || 'Component'
 
   const createProps = ({ data }) => data
@@ -24,4 +27,4 @@ const WithQueryRenderer = (query) => (ComposedComponent) => {
   )(ComponentWithQuery)
 }
 
-export default WithQueryRenderer
+export default withQueryRenderer

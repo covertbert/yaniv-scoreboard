@@ -1,7 +1,7 @@
 import { compose, setDisplayName, withHandlers } from 'recompose'
 import { gql } from 'apollo-boost'
 
-import WithQueryRenderer from '../../apollo/QueryRenderer'
+import withQueryRenderer from '../../hoc/withQueryRenderer'
 import PlayerManagement from './PlayerManagement'
 
 const createHandlers = {
@@ -21,6 +21,6 @@ const query = gql`
 
 export default compose(
   setDisplayName('PlayerManagementContainer'),
-  WithQueryRenderer(query),
+  withQueryRenderer(query),
   withHandlers(createHandlers),
 )(PlayerManagement)
