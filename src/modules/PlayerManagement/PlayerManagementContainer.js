@@ -1,21 +1,18 @@
-import { graphql, compose } from 'react-apollo'
-import { setDisplayName, withHandlers, withProps } from 'recompose'
+import { compose, setDisplayName, withHandlers, withProps } from 'recompose'
 import { gql } from 'apollo-boost'
-
-import ComponentLoader from '../../apollo/ComponentLoader'
+import WithQueryRenderer from '../../apollo/QueryRenderer'
 
 import PlayerManagement from './PlayerManagement'
+
+const createProps = ({ data }) => ({
+  players: data.players,
+})
 
 const createHandlers = {
   deletePlayer: () => () => {
     console.log('balls')
   },
 }
-
-const createProps = ({ data }) => ({
-  players: data.players,
-})
-
 const query = gql`
   {
     players {
@@ -28,8 +25,7 @@ const query = gql`
 
 export default compose(
   setDisplayName('PlayerManagementContainer'),
-  graphql(query),
-  ComponentLoader((props) => props.data.loading),
+  WithQueryRenderer(query),
   withHandlers(createHandlers),
   withProps(createProps),
 )(PlayerManagement)
