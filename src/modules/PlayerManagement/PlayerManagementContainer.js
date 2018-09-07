@@ -1,8 +1,8 @@
 import { compose, setDisplayName, withHandlers } from 'recompose'
 import { gql } from 'apollo-boost'
-import { graphql } from 'react-apollo'
 
-import withQueryRenderer from '../../hoc/withQueryRenderer'
+import { withQueryRenderer, withMutations, commitMutation } from '../../apollo'
+
 import PlayerManagement from './PlayerManagement'
 
 const query = gql`
@@ -15,7 +15,7 @@ const query = gql`
   }
 `
 
-const mutation = gql`
+const mutations = gql`
   mutation deletePlayerMutation($id: ID!) {
     deletePlayer(where: {
       id: $id
@@ -26,23 +26,16 @@ const mutation = gql`
 `
 
 const createHandlers = {
-  deletePlayerMutation: ({ mutate }) => (id) => mutate({
-    variables: {
-      id,
-    },
-    refetchQueries: [{
-      query,
-    }],
-  }).then((data) => {
-    console.log(data, 'Return value')
-  }).catch((e) => {
-    console.error(e, 'Error')
-  }),
+  deletePlayerMutation: ({ mutate }) => (id) => {
+    commitMutation(mutate, { id }, query).then((data) => {
+      console.log(data)
+    })
+  },
 }
 
 export default compose(
   setDisplayName('PlayerManagementContainer'),
   withQueryRenderer(query),
-  graphql(mutation),
+  withMutations(mutations),
   withHandlers(createHandlers),
 )(PlayerManagement)
