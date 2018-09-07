@@ -23,7 +23,10 @@ const AppHeader = () => (
       />
     </Link>
 
-    <Link to="/player-management">
+    <Link
+      to="/player-management"
+      data-test-id="AppHeader/PlayerManagementButton"
+    >
       <Icon
         accessibilityLabel="Player Management"
         icon="people"

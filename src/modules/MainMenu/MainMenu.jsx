@@ -1,23 +1,29 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import { Box, Button } from 'gestalt'
+
 import CenterWrapper from '../../components/CenterWrapper'
-// import { Link } from 'react-router-dom'
 
 const MainMenu = () => (
   <CenterWrapper>
     <Box width="100%">
       <Box padding={2}>
-        <Button
-          accessibilityLabel="New Game"
-          text="New game"
-          color="blue"
-        />
+        <Link to="/new-game">
+          <Button
+            accessibilityLabel="New Game"
+            text="New game"
+            color="blue"
+          />
+        </Link>
       </Box>
       <Box padding={2}>
-        <Button
-          accessibilityLabel="Load Game"
-          text="Load game"
-        />
+        <Link to="load-game">
+          <Button
+            accessibilityLabel="Load Game"
+            text="Load game"
+          />
+        </Link>
       </Box>
     </Box>
   </CenterWrapper>
