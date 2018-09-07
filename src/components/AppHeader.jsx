@@ -15,7 +15,10 @@ const AppHeaderWrapper = styled.header`
 
 const AppHeader = () => (
   <AppHeaderWrapper>
-    <Link to="/">
+    <Link
+      to="/"
+      data-test-id="AppHeader/HomeButton"
+    >
       <Icon
         accessibilityLabel="Home"
         icon="view-type-dense"
