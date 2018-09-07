@@ -1,12 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Card, Text, Box, Button, Heading } from 'gestalt'
+import { Box, Heading } from 'gestalt'
 
 import GenericLayout from '../../components/GenericLayout'
+import NoResults from '../../components/NoResults'
+
+import PlayerCard from './PlayerCard'
+import NewPlayerButton from './NewPlayerButton'
 
 const PlayerManagement = ({
   players,
-  deletePlayerMutation,
+  refetchQuery,
 }) => (
   <GenericLayout>
 
@@ -16,45 +20,31 @@ const PlayerManagement = ({
       marginTop={8}
       column={12}
     >
-      {players.map((player) => (
-        <Box
-          key={player.id}
-          marginBottom={5}
-          paddingY={5}
-          paddingX={5}
-          column={12}
-          color="lightGray"
-        >
-          <Card paddingY={10}>
-            <Text
-              align="center"
-              bold
-              size="xl"
-            >
-              <Box
-                marginBottom={3}
-                paddingX={1}
-                paddingY={1}
-              >
-                {player.name}
-              </Box>
-            </Text>
-            <Button
-              accessibilityLabel="Delete player"
-              color="red"
-              text="Delete"
-              onClick={() => { deletePlayerMutation(player.id) }}
-            />
-          </Card>
-        </Box>
-      ))}
+
+      {players.length > 0 ? (
+        players.map((player) => (
+          <PlayerCard
+            id={player.id}
+            name={player.name}
+            key={player.id}
+            refetchQuery={refetchQuery}
+          />
+        ))
+      ) : (
+        <NoResults message="No Players available" />
+      )}
+
     </Box>
+
+    <NewPlayerButton
+      refetchQuery={refetchQuery}
+    />
   </GenericLayout>
 )
 
 PlayerManagement.propTypes = {
+  refetchQuery: PropTypes.object.isRequired,
   players: PropTypes.array,
-  deletePlayerMutation: PropTypes.func.isRequired,
 }
 
 PlayerManagement.defaultProps = {

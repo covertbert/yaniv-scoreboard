@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { setDisplayName, withProps } from 'recompose'
 import { graphql, compose } from 'react-apollo'
 
-const withMutations = (mutations) => (ComposedComponent) => {
+const withMutation = (mutations) => (ComposedComponent) => {
   const wrappedComponentName = ComposedComponent.displayName || ComposedComponent.name || 'Component'
 
   const createProps = ({ data }) => data
@@ -16,10 +16,10 @@ const withMutations = (mutations) => (ComposedComponent) => {
   )
 
   return compose(
-    setDisplayName(`withMutations(${wrappedComponentName})`),
+    setDisplayName(`withMutation(${wrappedComponentName})`),
     graphql(mutations),
     withProps(createProps),
   )(ComponentWithQuery)
 }
 
-export default withMutations
+export default withMutation
