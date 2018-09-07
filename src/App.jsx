@@ -1,16 +1,14 @@
 import React from 'react'
-import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
+
+import GlobalStyle from './styles/GlobalStyle'
+import environment from './apollo/environment'
 
 import MainView from './modules/MainView'
 
-const client = new ApolloClient({
-  uri: 'http://localhost:4466/',
-})
-
-
 const App = () => (
-  <ApolloProvider client={client}>
+  <ApolloProvider client={environment}>
+    <GlobalStyle />
     <MainView />
   </ApolloProvider>
 )
