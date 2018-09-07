@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { Box, Button } from 'gestalt'
 
-import CenterWrapper from '../../components/CenterWrapper'
+import CenterWrapper from '../components/CenterWrapper'
 
 const MainMenu = () => (
   <CenterWrapper>

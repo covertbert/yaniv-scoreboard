@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     left:0;
   }
 
+  header {
+    z-index: 1;
+  }
+
   a {
     text-decoration: none;
   }
