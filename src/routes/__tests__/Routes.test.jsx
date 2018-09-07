@@ -1,19 +1,11 @@
 import React from 'react'
 
-import { Router } from 'react-router-dom'
-import { createMemoryHistory } from 'history'
+import { fireEvent } from 'react-testing-library'
 
-import { render, fireEvent } from 'react-testing-library'
+import renderWithRouter from '../../utils/test/renderWithRouter'
 
 import Routes from '../Routes'
 
-const renderWithRouter = (
-  ui,
-  { route = '/', history = createMemoryHistory({ initialEntries: [route] }) } = {},
-) => ({
-  ...render(<Router history={history}>{ui}</Router>),
-  history,
-})
 
 describe('Routes', () => {
   it('loads the index page', () => {
