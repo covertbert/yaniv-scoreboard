@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import Routes from '../../Routes'
+import Routes from '../../routes/Routes'
 import AppHeader from '../../components/AppHeader'
 
 const MainView = () => (
