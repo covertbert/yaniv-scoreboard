@@ -15,7 +15,6 @@ const renderWithRouter = (
   history,
 })
 
-
 describe('Routes', () => {
   it('loads the index page', () => {
     const { container } = renderWithRouter(<Routes />)

@@ -1,14 +1,16 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import Routes from '../../routes/Routes'
-import AppHeader from '../../components/AppHeader'
+import Routes from '../routes/Routes'
+import AppHeader from '../components/AppHeader'
 
 const MainView = () => (
   <Router>
     <React.Fragment>
       <AppHeader />
-      <Routes />
+      <main>
+        <Routes />
+      </main>
     </React.Fragment>
   </Router>
 )

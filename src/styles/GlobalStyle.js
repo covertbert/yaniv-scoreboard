@@ -6,7 +6,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body,
-  #root {
+  #root,
+  main {
     position:absolute;
     top:0;
     bottom:0;
