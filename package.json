@@ -65,6 +65,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
     ],
+    "coveragePathIgnorePatterns": ["/node_modules/", "src/service-workers"],
     "setupTestFrameworkScriptFile": "<rootDir>/config/setupTests.js",
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
