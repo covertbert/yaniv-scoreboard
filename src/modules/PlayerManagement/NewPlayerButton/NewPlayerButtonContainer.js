@@ -24,6 +24,10 @@ const createHandlers = {
   },
 }
 
+export {
+  createHandlers,
+}
+
 export default compose(
   setDisplayName('NewPlayerButtonContainer'),
   withMutation(mutation),
