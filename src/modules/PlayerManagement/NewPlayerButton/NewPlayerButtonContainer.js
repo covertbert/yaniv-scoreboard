@@ -18,9 +18,11 @@ const mutation = gql`
 
 const createHandlers = {
   createPlayerMutation: ({ mutate, refetchQuery }) => (name) => {
-    commitMutation(mutate, { name }, refetchQuery).then((data) => {
-      console.log(data)
-    })
+    const variables = {
+      name,
+    }
+
+    return commitMutation(variables, mutate, refetchQuery)
   },
 }
 
