@@ -1,7 +1,7 @@
 import commitMutation from '../commitMutation'
 
 describe('commitMutation', () => {
-  test('returns the value of the mutate function passed to it as a promise', () => {
+  test('returns the value of the mutate function passed to it as a promise', async () => {
     const params = {
       mutate: async () => true,
       variables: 'chicken',
@@ -10,14 +10,13 @@ describe('commitMutation', () => {
 
     const { mutate, variables, refetchQuery } = params
 
-    commitMutation(mutate, variables, refetchQuery).then((data) => {
-      expect(data).toBe(true)
-    })
+    await expect(commitMutation(mutate, variables, refetchQuery))
+      .resolves.toBe(true)
   })
 
   test('throws an error when the mutate function fails', async () => {
     const params = {
-      mutate: async () => new Error('Balls'),
+      mutate: async () => new Error('Chickens'),
       variables: 'chicken',
       refetchQuery: 'test',
     }
@@ -25,6 +24,6 @@ describe('commitMutation', () => {
     const { mutate, variables, refetchQuery } = params
 
     await expect(commitMutation(mutate, variables, refetchQuery))
-      .resolves.toEqual(Error('Balls'))
+      .resolves.toEqual(Error('Chickens'))
   })
 })
