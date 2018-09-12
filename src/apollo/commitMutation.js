@@ -1,16 +1,17 @@
 const commitMutation = (
   mutate,
-  variables,
+  queryVariables,
   refetchQuery,
 ) => new Promise((resolve) => {
-  mutate({
-    variables: {
-      ...variables,
-    },
-    refetchQueries: [{
-      query: refetchQuery,
-    }],
-  }).then((data) => {
+  const variables = { ...queryVariables }
+  const refetchQueries = refetchQuery ? [{ query: refetchQuery }] : undefined
+
+  const mutationParams = {
+    variables,
+    refetchQueries,
+  }
+
+  mutate(mutationParams).then((data) => {
     resolve(data)
   }).catch((error) => {
     throw new Error(error)

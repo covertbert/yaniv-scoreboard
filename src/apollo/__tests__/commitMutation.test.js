@@ -15,7 +15,7 @@ describe('commitMutation', () => {
     })
   })
 
-  test('throws an error', () => {
+  test('throws an error when the mutate function fails', async () => {
     const params = {
       mutate: async () => new Error('Balls'),
       variables: 'chicken',
@@ -24,8 +24,7 @@ describe('commitMutation', () => {
 
     const { mutate, variables, refetchQuery } = params
 
-    commitMutation(mutate, variables, refetchQuery).then((data) => {
-      expect(data).toContain('Error: Balls')
-    })
+    await expect(commitMutation(mutate, variables, refetchQuery))
+      .resolves.toEqual(Error('Balls'))
   })
 })
