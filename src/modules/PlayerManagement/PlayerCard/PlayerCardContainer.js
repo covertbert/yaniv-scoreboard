@@ -23,6 +23,10 @@ const createHandlers = {
   },
 }
 
+export {
+  mutation,
+}
+
 export default compose(
   setDisplayName('PlayerCardContainer'),
   withMutation(mutation),
