@@ -25,6 +25,7 @@ const createHandlers = {
 
 export {
   mutation,
+  createHandlers,
 }
 
 export default compose(
