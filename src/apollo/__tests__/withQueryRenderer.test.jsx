@@ -1,5 +1,5 @@
 import React from 'react'
-import { compose, setDisplayName, renderComponent } from 'recompose'
+import { compose, setDisplayName } from 'recompose'
 import { gql } from 'apollo-boost'
 import { render } from 'react-testing-library'
 
