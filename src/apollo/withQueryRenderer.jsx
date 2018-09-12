@@ -27,4 +27,8 @@ const withQueryRenderer = (query) => (ComposedComponent) => {
   )(ComponentWithQuery)
 }
 
+export {
+  ComponentLoader,
+}
+
 export default withQueryRenderer
