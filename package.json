@@ -32,6 +32,7 @@
     "graphql": "^0.13.2",
     "history": "^4.7.2",
     "html-webpack-plugin": "2.29.0",
+    "husky": "^1.0.0-rc.14",
     "jest": "20.0.4",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -60,13 +61,18 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test:open": "node scripts/test.js --env=jsdom",
+    "test:run": "npx jest --coverage",
+    "lint": "npx eslint ."
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
     ],
-    "coveragePathIgnorePatterns": ["/node_modules/", "src/service-workers"],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "src/service-workers"
+    ],
     "setupTestFrameworkScriptFile": "<rootDir>/config/setupTests.js",
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
@@ -97,6 +103,12 @@
       "node",
       "mjs"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test:run"
+    }
   },
   "babel": {
     "presets": [
