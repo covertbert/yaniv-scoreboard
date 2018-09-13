@@ -4,9 +4,9 @@ import { graphql, compose } from 'react-apollo'
 
 import Preloader from '../components/Preloader'
 
-const ComponentLoader = (loading) => branch(loading, renderComponent(Preloader))
+const ComponentLoader = (loading: Function) => branch(loading, renderComponent(Preloader))
 
-const withQueryRenderer = (query) => (ComposedComponent) => {
+const withQueryRenderer = (query: Object) => (ComposedComponent: Function) => {
   const wrappedComponentName = ComposedComponent.displayName || ComposedComponent.name || 'Component'
 
   const createProps = ({ data }) => data

@@ -6,5 +6,10 @@ import 'gestalt/dist/gestalt.css'
 import App from './App'
 import registerServiceWorker from './service-workers/registerServiceWorker'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const root = document.getElementById('root')
+
+if (root !== null) {
+  ReactDOM.render(<App />, root)
+}
+
 registerServiceWorker()

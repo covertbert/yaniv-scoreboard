@@ -4,6 +4,9 @@
     "browser": true,
     "jest": true
   },
+  "plugins": [
+    "flowtype"
+  ],
   "extends": [
     "airbnb"
   ],

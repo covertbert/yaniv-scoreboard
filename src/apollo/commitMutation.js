@@ -1,4 +1,4 @@
-const commitMutation = (variables, mutate, refetchQuery) => {
+const commitMutation = (variables: Object, mutate: Function, refetchQuery: Object): Promise <any> => {
   const refetchQueries = refetchQuery ? [{ query: refetchQuery }] : undefined
 
   return new Promise((resolve, reject) => {
