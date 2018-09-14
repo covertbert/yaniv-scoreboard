@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Box, Heading } from 'gestalt'
 
 import GenericLayout from '../../components/GenericLayout'
@@ -8,10 +7,12 @@ import NoResults from '../../components/NoResults'
 import PlayerCard from './PlayerCard'
 import NewPlayerButton from './NewPlayerButton'
 
-const PlayerManagement = ({
-  players,
-  refetchQuery,
-}) => (
+type Props = {
+  players: Object,
+  refetchQuery: Function,
+};
+
+const PlayerManagement = ({ refetchQuery, players }: Props) => (
   <GenericLayout>
 
     <Heading>Players</Heading>
@@ -41,14 +42,5 @@ const PlayerManagement = ({
     />
   </GenericLayout>
 )
-
-PlayerManagement.propTypes = {
-  refetchQuery: PropTypes.object.isRequired,
-  players: PropTypes.array,
-}
-
-PlayerManagement.defaultProps = {
-  players: [],
-}
 
 export default PlayerManagement

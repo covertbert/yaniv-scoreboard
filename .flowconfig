@@ -1,6 +1,8 @@
 [ignore]
+.*/__tests__/.*
 
 [include]
+./src/
 
 [libs]
 flow-typed
@@ -8,6 +10,8 @@ flow-typed
 [lints]
 
 [options]
-all=true
 
 [strict]
+
+[untyped]
+.*/node_modules/gestalt
