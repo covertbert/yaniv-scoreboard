@@ -1,11 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
 import { Box, Button } from 'gestalt'
 
-const NewPlayerButton = ({
-  createPlayerMutation,
-}) => (
+type Props = {
+  createPlayerMutation: Function,
+};
+
+const NewPlayerButton = ({ createPlayerMutation }: Props) => (
   <Box
     marginTop={4}
     column={12}
@@ -18,9 +18,5 @@ const NewPlayerButton = ({
     />
   </Box>
 )
-
-NewPlayerButton.propTypes = {
-  createPlayerMutation: PropTypes.func.isRequired,
-}
 
 export default NewPlayerButton

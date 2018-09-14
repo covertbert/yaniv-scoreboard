@@ -15,7 +15,6 @@ const mutation = gql`
     }
   }
 `
-
 const createHandlers = {
   createPlayerMutation: ({ mutate, refetchQuery }) => (name) => {
     const variables = {
