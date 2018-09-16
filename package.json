@@ -130,7 +130,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
+    "src/**/*.{ts,tsx}": [
       "tslint --fix",
       "git add"
     ]
