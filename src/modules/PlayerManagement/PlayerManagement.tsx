@@ -1,14 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { Box, Heading } from 'gestalt'
+import * as React from 'react'
 
 import GenericLayout from '../../components/GenericLayout'
 import NoResults from '../../components/NoResults'
 
-import PlayerCard from './PlayerCard'
 import NewPlayerButton from './NewPlayerButton'
+import PlayerCard from './PlayerCard'
 
-const PlayerManagement = ({
+interface IProps {
+  refetchQuery: object,
+  players: any[],
+}
+
+const PlayerManagement: React.SFC<IProps> = ({
   players,
   refetchQuery,
 }) => (
@@ -42,13 +46,6 @@ const PlayerManagement = ({
   </GenericLayout>
 )
 
-PlayerManagement.propTypes = {
-  refetchQuery: PropTypes.object.isRequired,
-  players: PropTypes.array,
-}
-
-PlayerManagement.defaultProps = {
-  players: [],
-}
+// TODO Fix default props
 
 export default PlayerManagement
