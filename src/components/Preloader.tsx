@@ -1,11 +1,12 @@
-import React from 'react'
 import { Spinner } from 'gestalt'
+import { SFC } from 'react'
+import * as React from 'react'
 import CenterWrapper from './CenterWrapper'
 
-const Preloader = () => (
+const Preloader: SFC = () => (
   <CenterWrapper>
     <Spinner
-      show
+      show={true}
       accessibilityLabel="Loading spinner"
     />
   </CenterWrapper>
