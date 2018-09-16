@@ -1,11 +1,11 @@
-import React from 'react'
+import * as React from 'react'
 import { Link } from 'react-router-dom'
 
 import { Box, Button } from 'gestalt'
 
 import CenterWrapper from '../components/CenterWrapper'
 
-const MainMenu = () => (
+const MainMenu: React.SFC = () => (
   <CenterWrapper>
     <Box width="100%">
       <Box padding={2}>

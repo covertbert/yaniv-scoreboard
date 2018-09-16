@@ -1,10 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import Routes from '../routes/Routes'
 import AppHeader from '../components/AppHeader'
+import Routes from '../routes/Routes'
 
-const MainView = () => (
+const MainView: React.SFC = () => (
   <Router>
     <React.Fragment>
       <AppHeader />
