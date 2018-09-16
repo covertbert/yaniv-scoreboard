@@ -8,6 +8,7 @@
   "rules": {
     "object-literal-sort-keys": false,
     "variable-name": false,
+    "ter-arrow-parens": [true, "always"],
     "semicolon": [
       true,
       "never"

@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styledComponents from 'styled-components'
 
-const CenterWrapper = styled.div`
+const CenterWrapper = styledComponents.div`
   height: 100%;
   display: flex;
   justify-content: center;

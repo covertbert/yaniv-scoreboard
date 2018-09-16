@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { Icon } from 'gestalt'
+import * as React from 'react'
+import { Link } from 'react-router-dom'
+import styledComponents from 'styled-components'
 
-const AppHeaderWrapper = styled.header`
+const AppHeaderWrapper = styledComponents.header`
   position: fixed;
   top: 0;
   left: 0;
@@ -21,7 +21,7 @@ const AppHeader = () => (
     >
       <Icon
         accessibilityLabel="Home"
-        icon="view-type-dense"
+        icon="menu"
         size="25px"
       />
     </Link>

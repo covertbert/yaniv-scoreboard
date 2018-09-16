@@ -1,9 +1,8 @@
 import { Spinner } from 'gestalt'
-import { SFC } from 'react'
 import * as React from 'react'
 import CenterWrapper from './CenterWrapper'
 
-const Preloader: SFC = () => (
+const Preloader: React.SFC = () => (
   <CenterWrapper>
     <Spinner
       show={true}

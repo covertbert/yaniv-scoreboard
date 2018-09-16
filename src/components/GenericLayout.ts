@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styledComponents from 'styled-components'
 
-const GenericLayout = styled.main`
+const GenericLayout = styledComponents.main`
   padding: 50px 8px 0 8px;
   display: flex;
   flex-direction: column;

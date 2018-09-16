@@ -1,11 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 
 import { Box, Icon, Text } from 'gestalt'
 
-const NoResults = ({
-  message,
-}) => (
+interface IProps {
+  message: string,
+}
+
+const NoResults: React.SFC<IProps> = ({ message }) => (
   <Box
     alignItems="center"
     justifyContent="center"
@@ -25,7 +26,7 @@ const NoResults = ({
     </Box>
     <Text
       align="center"
-      bold
+      bold={true}
       color="darkGray"
       size="xl"
     >
@@ -33,9 +34,5 @@ const NoResults = ({
     </Text>
   </Box>
 )
-
-NoResults.propTypes = {
-  message: PropTypes.string.isRequired,
-}
 
 export default NoResults
