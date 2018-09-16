@@ -16,24 +16,24 @@ const mocks = [
 describe('PlayerManagement', () => {
   it('renders the PlayerManagement', () => {
     const props = {
-      refetchQuery: {},
       players: [
         {
+          createdAt: '2018-09-07T15:33:08.392Z',
           id: 'tom-id',
           name: 'Tom',
-          createdAt: '2018-09-07T15:33:08.392Z',
         },
         {
+          createdAt: '2018-09-07T15:33:08.392Z',
           id: 'dick-id',
           name: 'Dick',
-          createdAt: '2018-09-07T15:33:08.392Z',
         },
         {
+          createdAt: '2018-09-07T15:33:08.392Z',
           id: 'harry-id',
           name: 'Harry',
-          createdAt: '2018-09-07T15:33:08.392Z',
         },
       ],
+      refetchQuery: {},
     }
 
     const { container } = renderWithProvider(<PlayerManagement {...props} />, mocks)

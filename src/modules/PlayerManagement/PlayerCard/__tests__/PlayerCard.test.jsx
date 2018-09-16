@@ -18,9 +18,9 @@ const mocks = [
 describe('PlayerCard', () => {
   it('renders correctly', () => {
     const props = {
+      deletePlayerMutation: jest.fn(),
       id: 'chicken',
       name: 'Chicken',
-      deletePlayerMutation: jest.fn(),
     }
 
     const { container } = renderWithProvider(<PlayerCard {...props} />, mocks)
@@ -31,9 +31,9 @@ describe('PlayerCard', () => {
 
   it('fires deletePlayerMutation event when delete button is clicked', () => {
     const props = {
+      deletePlayerMutation: jest.fn(),
       id: 'chicken',
       name: 'Chicken',
-      deletePlayerMutation: jest.fn(),
     }
 
     const { getByText } = renderWithProvider(<PlayerCard {...props} />, mocks)

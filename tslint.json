@@ -1,10 +1,27 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier",
+    "tslint-config-airbnb"
+  ],
+  "rules": {
+    "object-literal-sort-keys": false,
+    "semicolon": [
+      true,
+      "never"
+    ]
+  },
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
       "node_modules/**/*.ts",
-      "coverage/lcov-report/*.js"
+      "coverage/lcov-report/*.js",
+      "**/__test__/**",
+      "src/service-workers/registerServiceWorker.js"
     ]
+  },
+  "jsRules": {
+    "object-literal-sort-keys": false
   }
 }
