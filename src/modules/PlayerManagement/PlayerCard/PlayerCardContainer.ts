@@ -1,7 +1,7 @@
-import { compose, setDisplayName, withHandlers } from 'recompose'
 import { gql } from 'apollo-boost'
+import { compose, setDisplayName, withHandlers } from 'recompose'
 
-import { withMutation, commitMutation } from '../../../apollo'
+import { commitMutation, withMutation } from '../../../apollo'
 
 import PlayerCard from './PlayerCard'
 
@@ -15,8 +15,13 @@ const mutation = gql`
   }
 `
 
+interface IDeletePlayerMutation {
+  mutate: void
+  refetchQuery: object
+}
+
 const createHandlers = {
-  deletePlayerMutation: ({ mutate, refetchQuery }) => (id) => {
+  deletePlayerMutation: ({ mutate, refetchQuery } : IDeletePlayerMutation) => (id: string) => {
     const variables = {
       id,
     }

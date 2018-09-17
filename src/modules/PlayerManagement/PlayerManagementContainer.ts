@@ -1,5 +1,5 @@
-import { compose, setDisplayName, withProps } from 'recompose'
 import { gql } from 'apollo-boost'
+import { compose, setDisplayName, withProps } from 'recompose'
 
 import { withQueryRenderer } from '../../apollo'
 

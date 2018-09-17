@@ -7,9 +7,13 @@ import NoResults from '../../components/NoResults'
 import NewPlayerButton from './NewPlayerButton'
 import PlayerCard from './PlayerCard'
 
+interface IPlayer {
+  id: string
+  name: string
+}
 interface IProps {
   refetchQuery: object,
-  players: any[],
+  players: IPlayer[],
 }
 
 const PlayerManagement: React.SFC<IProps> = ({
@@ -45,6 +49,10 @@ const PlayerManagement: React.SFC<IProps> = ({
     />
   </GenericLayout>
 )
+
+// PlayerManagement.defaultProps = {
+//   players: [],
+// }
 
 // TODO Fix default props
 

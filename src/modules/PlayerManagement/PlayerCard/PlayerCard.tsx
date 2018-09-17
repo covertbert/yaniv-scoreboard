@@ -1,9 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 
-import { Card, Text, Box, Button } from 'gestalt'
+import { Box, Button, Card, Text } from 'gestalt'
 
-const PlayerCard = ({
+interface IProps {
+  id: string,
+  name: string,
+  deletePlayerMutation(id: string): void,
+}
+
+const PlayerCard: React.SFC<IProps> = ({
   id,
   name,
   deletePlayerMutation,
@@ -15,10 +20,10 @@ const PlayerCard = ({
     column={12}
     color="lightGray"
   >
-    <Card paddingY={10}>
+    <Card>
       <Text
         align="center"
-        bold
+        bold={true}
         size="xl"
       >
         <Box
@@ -38,11 +43,4 @@ const PlayerCard = ({
     </Card>
   </Box>
 )
-
-PlayerCard.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  deletePlayerMutation: PropTypes.func.isRequired,
-}
-
 export default PlayerCard
