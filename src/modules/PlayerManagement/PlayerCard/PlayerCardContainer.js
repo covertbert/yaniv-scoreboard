@@ -15,13 +15,8 @@ const mutation = gql`
   }
 `
 
-interface IDeletePlayerMutation {
-  mutate: void
-  refetchQuery: object
-}
-
 const createHandlers = {
-  deletePlayerMutation: ({ mutate, refetchQuery } : IDeletePlayerMutation) => (id: string) => {
+  deletePlayerMutation: ({ mutate, refetchQuery }) => (id) => {
     const variables = {
       id,
     }

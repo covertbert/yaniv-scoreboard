@@ -1,16 +1,16 @@
-import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import * as React from 'react'
+import { Route, Switch } from 'react-router-dom'
 
-import MainMenu from '../modules/MainMenu'
-import PlayerManagement from '../modules/PlayerManagement'
-import NewGame from '../modules/NewGame'
 import LoadGame from '../modules/LoadGame'
+import MainMenu from '../modules/MainMenu'
+import NewGame from '../modules/NewGame'
+import PlayerManagement from '../modules/PlayerManagement'
 
 const Routes = () => (
   <Switch>
     <Route
       path="/"
-      exact
+      exact={true}
       component={MainMenu}
     />
     <Route
