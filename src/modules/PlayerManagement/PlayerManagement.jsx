@@ -4,7 +4,7 @@ import { Box, Heading } from 'gestalt'
 import GenericLayout from '../../components/GenericLayout'
 import NoResults from '../../components/NoResults'
 
-import PlayerCard from './PlayerCard'
+import PlayerCard from '../../components/PlayerCard'
 import NewPlayerButton from '../../components/NewPlayerButton'
 
 type Props = {
@@ -28,6 +28,7 @@ const PlayerManagement = ({ refetchQuery, players }: Props) => (
             id={player.id}
             name={player.name}
             key={player.id}
+            actionType="delete"
             refetchQuery={refetchQuery}
           />
         ))
