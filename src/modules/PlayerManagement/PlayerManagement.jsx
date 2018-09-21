@@ -5,7 +5,7 @@ import GenericLayout from '../../components/GenericLayout'
 import NoResults from '../../components/NoResults'
 
 import PlayerCard from './PlayerCard'
-import NewPlayerButton from './NewPlayerButton'
+import NewPlayerButton from '../../components/NewPlayerButton'
 
 type Props = {
   players: Object,

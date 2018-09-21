@@ -5,7 +5,7 @@ import { fireEvent } from 'react-testing-library'
 import NewPlayerButton from '../NewPlayerButton'
 import { mutation } from '../NewPlayerButtonContainer'
 
-import renderWithProvider from '../../../../utils/test/renderWithProvider'
+import renderWithProvider from '../../../utils/test/renderWithProvider'
 
 const mocks = [
   {

@@ -1,5 +1,25 @@
-import { compose, setDisplayName } from 'recompose'
+import { compose, setDisplayName, withProps } from 'recompose'
+import { gql } from 'apollo-boost'
+
+import { withQueryRenderer } from '../../apollo'
 
 import NewGame from './NewGame'
 
-export default compose(setDisplayName('NewGameContainer'))(NewGame)
+const query = gql`
+  {
+    players {
+      id
+      name
+    }
+  }
+`
+
+const createProps = {
+  refetchQuery: query,
+}
+
+export default compose(
+  setDisplayName('NewGameContainer'),
+  withQueryRenderer(query),
+  withProps(createProps),
+)(NewGame)

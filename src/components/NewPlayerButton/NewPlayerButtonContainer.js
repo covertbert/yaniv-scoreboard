@@ -1,7 +1,7 @@
 import { compose, setDisplayName, withHandlers } from 'recompose'
 import { gql } from 'apollo-boost'
 
-import { withMutation, commitMutation } from '../../../apollo'
+import { withMutation, commitMutation } from '../../apollo'
 
 import NewPlayerButton from './NewPlayerButton'
 

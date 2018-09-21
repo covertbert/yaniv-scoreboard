@@ -8,11 +8,12 @@ type Props = {
 const NewPlayerButton = ({ createPlayerMutation }: Props) => (
   <Box
     marginTop={4}
+    marginBottom={6}
     column={12}
   >
     <Button
       accessibilityLabel="Add Player"
-      text="Add player"
+      text="New player"
       color="blue"
       onClick={() => createPlayerMutation('Tom')}
     />

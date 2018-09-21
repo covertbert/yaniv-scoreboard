@@ -10,7 +10,6 @@ const query = gql`
     players {
       id
       name
-      createdAt
     }
   }
 `
