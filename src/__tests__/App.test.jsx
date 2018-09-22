@@ -1,18 +1,17 @@
 import React from 'react'
+import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
 
 import App from '../App'
 
-import renderWithProvider from '../utils/test/renderWithProvider'
-
 describe('App', () => {
   it('renders the App', () => {
-    const { container } = renderWithProvider(<App />)
+    const wrapper = shallow(<App />)
 
-    expect(container.innerHTML).toContain('<title>Home</title>')
-    expect(container.innerHTML).toContain('<title>Player Management</title>')
-    expect(container.innerHTML).toContain('AppHeader/PlayerManagementButton')
-    expect(container.innerHTML).toContain('AppHeader/HomeButton')
-    expect(container.innerHTML).toContain('Load game')
-    expect(container.innerHTML).toContain('New game')
+    expect(wrapper.find('ApolloProvider').exists()).toEqual(true)
+    expect(wrapper.find('GlobalStyleComponent').exists()).toEqual(true)
+    expect(wrapper.find('MainView').exists()).toEqual(true)
+
+    expect(toJson(wrapper)).toMatchSnapshot()
   })
 })
