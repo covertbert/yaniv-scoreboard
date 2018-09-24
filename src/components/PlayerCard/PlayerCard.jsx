@@ -6,7 +6,8 @@ type Props = {
   id: String,
   name: String,
   actionType: 'delete' | 'addToGame' | 'removeFromGame',
-  deletePlayerMutation: Function
+  deletePlayerMutation: Function,
+  addPlayerToGame: Function,
 }
 
 const PlayerCard = ({
@@ -14,6 +15,7 @@ const PlayerCard = ({
   name,
   actionType,
   deletePlayerMutation,
+  addPlayerToGame,
 }:
 Props) => (
   <Box
@@ -52,7 +54,7 @@ Props) => (
           accessibilityLabel="Add to game"
           color="blue"
           text="Add"
-          onClick={() => { console.log('adding to game') }}
+          onClick={() => { addPlayerToGame({ name, id }) }}
         />
       )}
 

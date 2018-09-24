@@ -8,10 +8,11 @@ import PlayerCard from '../../components/PlayerCard'
 
 type Props = {
   players: Array,
+  playersInGame: Array,
   refetchQuery: Object,
 }
 
-const NewGame = ({ players, refetchQuery }: Props) => (
+const NewGame = ({ players, playersInGame, refetchQuery }: Props) => (
   <GenericLayout>
 
     <Heading>New game</Heading>
@@ -31,12 +32,12 @@ const NewGame = ({ players, refetchQuery }: Props) => (
       >
 
         {players.length > 0 ? (
-          players.map((player) => (
+          playersInGame.map((player) => (
             <PlayerCard
               id={player.id}
               name={player.name}
               key={player.id}
-              actionType="addToGame"
+              actionType="removeFromGame"
               refetchQuery={refetchQuery}
             />
           ))
@@ -68,7 +69,7 @@ const NewGame = ({ players, refetchQuery }: Props) => (
               id={player.id}
               name={player.name}
               key={player.id}
-              actionType="removeFromGame"
+              actionType="addToGame"
               refetchQuery={refetchQuery}
             />
           ))

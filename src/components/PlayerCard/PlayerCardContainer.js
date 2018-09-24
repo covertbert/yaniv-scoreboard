@@ -1,7 +1,9 @@
+import { connect } from 'react-redux'
 import { compose, setDisplayName, withHandlers } from 'recompose'
 import { gql } from 'apollo-boost'
 
 import { withMutation, commitMutation } from '../../apollo'
+import { currentGameAddPlayer } from '../../store/actions'
 
 import PlayerCard from './PlayerCard'
 
@@ -25,6 +27,12 @@ const createHandlers = {
   },
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  addPlayerToGame: (player) => {
+    dispatch(currentGameAddPlayer(player))
+  },
+})
+
 export {
   mutation,
   createHandlers,
@@ -34,4 +42,5 @@ export default compose(
   setDisplayName('PlayerCardContainer'),
   withMutation(mutation),
   withHandlers(createHandlers),
+  connect(null, mapDispatchToProps),
 )(PlayerCard)
