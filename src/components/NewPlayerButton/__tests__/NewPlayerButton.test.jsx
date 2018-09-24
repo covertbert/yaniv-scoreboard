@@ -23,7 +23,7 @@ describe('NewPlayerButton', () => {
 
     const { container } = renderWithProvider(<NewPlayerButton {...props} />, mocks)
 
-    expect(container.innerHTML).toContain('Add player')
+    expect(container.innerHTML).toContain('New player')
   })
 
   it('fires createPlayerMutation event when add player button is clicked', () => {
@@ -34,7 +34,7 @@ describe('NewPlayerButton', () => {
     const { getByText } = renderWithProvider(<NewPlayerButton {...props} />, mocks)
 
     const leftClick = { button: 0 }
-    fireEvent.click(getByText('Add player'), leftClick)
+    fireEvent.click(getByText('New player'), leftClick)
     expect(props.createPlayerMutation).toBeCalled()
   })
 })

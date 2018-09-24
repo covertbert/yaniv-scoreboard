@@ -12,7 +12,7 @@ const NewPlayerButton = ({ createPlayerMutation }: Props) => (
     column={12}
   >
     <Button
-      accessibilityLabel="Add Player"
+      accessibilityLabel="New Player"
       text="New player"
       color="blue"
       onClick={() => createPlayerMutation('Tom')}
