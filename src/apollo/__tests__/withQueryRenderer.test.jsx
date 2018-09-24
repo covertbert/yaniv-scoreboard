@@ -1,7 +1,7 @@
 import React from 'react'
 import { compose, setDisplayName } from 'recompose'
 import { gql } from 'apollo-boost'
-import { render } from 'react-testing-library'
+import { render } from 'enzyme'
 
 import withQueryRenderer, { ComponentLoader } from '../withQueryRenderer'
 

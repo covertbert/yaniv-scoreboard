@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-testing-library'
+import { shallow } from 'enzyme'
 import NoResults from '../NoResults'
 
 describe('NoResults', () => {
@@ -8,8 +8,8 @@ describe('NoResults', () => {
       message: 'No gosh darned results',
     }
 
-    const { container } = render(<NoResults {...props} />)
+    const { container } = shallow(<NoResults {...props} />)
 
-    expect(container.innerHTML).toContain(props.message)
+    expect(container).toContain(props.message)
   })
 })
