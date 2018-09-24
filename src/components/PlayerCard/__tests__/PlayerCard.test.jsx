@@ -16,11 +16,12 @@ const mocks = [
 ]
 
 describe('PlayerCard', () => {
-  it('renders correctly', () => {
+  it('renders the delete button when actions is delete', () => {
     const props = {
       id: 'chicken',
       name: 'Chicken',
       deletePlayerMutation: jest.fn(),
+      actionType: 'delete',
     }
 
     const { container } = renderWithProvider(<PlayerCard {...props} />, mocks)
@@ -29,11 +30,40 @@ describe('PlayerCard', () => {
     expect(container.innerHTML).toContain('Delete player')
   })
 
+  it('renders the add to game button when action is addToGame', () => {
+    const props = {
+      id: 'chicken',
+      name: 'Chicken',
+      deletePlayerMutation: jest.fn(),
+      actionType: 'addToGame',
+    }
+
+    const { container } = renderWithProvider(<PlayerCard {...props} />, mocks)
+
+    expect(container.innerHTML).toContain('Chicken')
+    expect(container.innerHTML).toContain('Add')
+  })
+
+  it('renders the remove from game button when actions is removeFromGame', () => {
+    const props = {
+      id: 'chicken',
+      name: 'Chicken',
+      deletePlayerMutation: jest.fn(),
+      actionType: 'removeFromGame',
+    }
+
+    const { container } = renderWithProvider(<PlayerCard {...props} />, mocks)
+
+    expect(container.innerHTML).toContain('Chicken')
+    expect(container.innerHTML).toContain('Remove')
+  })
+
   it('fires deletePlayerMutation event when delete button is clicked', () => {
     const props = {
       id: 'chicken',
       name: 'Chicken',
       deletePlayerMutation: jest.fn(),
+      actionType: 'delete',
     }
 
     const { getByText } = renderWithProvider(<PlayerCard {...props} />, mocks)
