@@ -16,9 +16,14 @@ const query = gql`
   }
 `
 
-const createProps = ({ players }) => ({
+const getAvailablePlayers = (players, playersInGame) => {
+  const playersInGameIDs = playersInGame.map((playerInGame) => playerInGame.id)
+  return players.filter((player) => !playersInGameIDs.includes(player.id))
+}
+
+const createProps = ({ players, playersInGame }) => ({
   refetchQuery: query,
-  availablePlayers: players,
+  availablePlayers: getAvailablePlayers(players, playersInGame),
 })
 
 const mapStateToProps = (state) => ({
@@ -28,6 +33,6 @@ const mapStateToProps = (state) => ({
 export default compose(
   setDisplayName('NewGameContainer'),
   withQueryRenderer(query),
-  withProps(createProps),
   connect(mapStateToProps),
+  withProps(createProps),
 )(NewGame)
