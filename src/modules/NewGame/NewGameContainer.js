@@ -30,6 +30,13 @@ const mapStateToProps = (state) => ({
   playersInGame: getPlayersInGame(state),
 })
 
+export {
+  getAvailablePlayers,
+  createProps,
+  mapStateToProps,
+  query,
+}
+
 export default compose(
   setDisplayName('NewGameContainer'),
   withQueryRenderer(query),
