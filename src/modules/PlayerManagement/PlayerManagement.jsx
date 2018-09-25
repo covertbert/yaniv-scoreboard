@@ -20,6 +20,7 @@ const PlayerManagement = ({ refetchQuery, players }: Props) => (
     <Box
       marginTop={8}
       column={12}
+      data-testid="PlayerManagement/players"
     >
 
       {players.length > 0 ? (

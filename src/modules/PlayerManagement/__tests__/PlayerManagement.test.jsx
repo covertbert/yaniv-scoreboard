@@ -1,17 +1,14 @@
 import React from 'react'
 
 import PlayerManagement from '../PlayerManagement'
-import { query } from '../PlayerManagementContainer'
 
 import renderWithProvider from '../../../utils/test/renderWithProvider'
 
-const mocks = [
-  {
-    request: {
-      query,
-    },
-  },
-]
+jest.mock('../../../components/PlayerCard', () => () => (
+  <div id="playerCard">
+    Player
+  </div>
+))
 
 describe('PlayerManagement', () => {
   it('renders the PlayerManagement', () => {
@@ -36,10 +33,8 @@ describe('PlayerManagement', () => {
       ],
     }
 
-    const { container } = renderWithProvider(<PlayerManagement {...props} />, mocks)
+    const { getByTestId } = renderWithProvider(<PlayerManagement {...props} />)
 
-    expect(container.innerHTML).toContain('Tom')
-    expect(container.innerHTML).toContain('Dick')
-    expect(container.innerHTML).toContain('Harry')
+    expect(getByTestId('PlayerManagement/players').children).toHaveLength(3)
   })
 })

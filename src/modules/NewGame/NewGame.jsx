@@ -29,6 +29,7 @@ const NewGame = ({ availablePlayers, playersInGame, refetchQuery }: Props) => (
       <Box
         marginTop={8}
         column={12}
+        data-testid="NewGame/players-in-game"
       >
 
         {playersInGame.length > 0 ? (
@@ -61,6 +62,7 @@ const NewGame = ({ availablePlayers, playersInGame, refetchQuery }: Props) => (
       <Box
         marginTop={8}
         column={12}
+        data-testid="NewGame/available-players"
       >
 
         {availablePlayers.length > 0 ? (
