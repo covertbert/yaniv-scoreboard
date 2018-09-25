@@ -3,7 +3,7 @@ import { compose, setDisplayName, withHandlers } from 'recompose'
 import { gql } from 'apollo-boost'
 
 import { withMutation, commitMutation } from '../../apollo'
-import { currentGameAddPlayer } from '../../store/actions'
+import { currentGameAddPlayer, currentGameRemovePlayer } from '../../store/actions'
 
 import PlayerCard from './PlayerCard'
 
@@ -30,6 +30,10 @@ const createHandlers = {
 const mapDispatchToProps = (dispatch) => ({
   addPlayerToGame: (player) => {
     dispatch(currentGameAddPlayer(player))
+  },
+
+  removePlayerFromGame: (id) => {
+    dispatch(currentGameRemovePlayer(id))
   },
 })
 

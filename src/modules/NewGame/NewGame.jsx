@@ -7,12 +7,12 @@ import NewPlayerButton from '../../components/NewPlayerButton'
 import PlayerCard from '../../components/PlayerCard'
 
 type Props = {
-  players: Array,
   playersInGame: Array,
+  availablePlayers: Array,
   refetchQuery: Object,
 }
 
-const NewGame = ({ players, playersInGame, refetchQuery }: Props) => (
+const NewGame = ({ availablePlayers, playersInGame, refetchQuery }: Props) => (
   <GenericLayout>
 
     <Heading>New game</Heading>
@@ -31,7 +31,7 @@ const NewGame = ({ players, playersInGame, refetchQuery }: Props) => (
         column={12}
       >
 
-        {players.length > 0 ? (
+        {playersInGame.length > 0 ? (
           playersInGame.map((player) => (
             <PlayerCard
               id={player.id}
@@ -63,8 +63,8 @@ const NewGame = ({ players, playersInGame, refetchQuery }: Props) => (
         column={12}
       >
 
-        {players.length > 0 ? (
-          players.map((player) => (
+        {availablePlayers.length > 0 ? (
+          availablePlayers.map((player) => (
             <PlayerCard
               id={player.id}
               name={player.name}

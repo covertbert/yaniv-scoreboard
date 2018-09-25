@@ -3,6 +3,12 @@ const currentGameAddPlayer = (payload) => ({
   payload,
 })
 
+const currentGameRemovePlayer = (payload) => ({
+  type: 'CURRENT_GAME_REMOVE_PLAYER',
+  payload,
+})
+
 export {
   currentGameAddPlayer,
+  currentGameRemovePlayer,
 }

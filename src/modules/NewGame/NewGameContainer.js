@@ -16,17 +16,14 @@ const query = gql`
   }
 `
 
-const createProps = {
+const createProps = ({ players }) => ({
   refetchQuery: query,
-}
+  availablePlayers: players,
+})
 
-const mapStateToProps = (state) => {
-  console.log(getPlayersInGame(state))
-
-  return {
-    playersInGame: getPlayersInGame(state),
-  }
-}
+const mapStateToProps = (state) => ({
+  playersInGame: getPlayersInGame(state),
+})
 
 export default compose(
   setDisplayName('NewGameContainer'),

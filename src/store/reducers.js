@@ -9,14 +9,8 @@ const currentGame = (state = playersInGame, { type, payload }) => {
         id: payload.id,
         name: payload.name,
       }]
-
-    // case 'REMOVE_PLAYER':
-    //   return {
-    //     players: [...state, {
-    //       id: payload.id,
-    //       name: payload.name,
-    //     }],
-    //   }
+    case 'CURRENT_GAME_REMOVE_PLAYER':
+      return state.filter((player) => player.id !== payload)
     default:
       return state
   }
