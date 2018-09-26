@@ -40,6 +40,7 @@ const mapDispatchToProps = (dispatch) => ({
 export {
   mutation,
   createHandlers,
+  mapDispatchToProps,
 }
 
 export default compose(
